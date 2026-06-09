@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — EQ Partners</title>
+<meta name="description" content="EQ Partners was founded by Dan Harris — a strategy consultant and product builder working at the intersection of commercial strategy and product development." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+.page-hero { padding-top: clamp(48px, 7vw, 92px); padding-bottom: clamp(36px, 4vw, 52px); }
+.page-hero h1 { font-size: clamp(44px, 7.5vw, 96px); font-weight: 800; letter-spacing: -0.045em; line-height: .95; margin-top: 22px; max-width: 12ch; }
+
+.about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+.about-copy p { font-size: clamp(19px, 2.1vw, 22px); color: var(--ink-2); line-height: 1.6; margin-bottom: 24px; max-width: 58ch; }
+.about-copy p .serif-em { color: var(--ink); }
+.about-copy p:last-child { margin-bottom: 0; }
+
+.dan-card { position: sticky; top: 100px; }
+.dan-photo { aspect-ratio: 4/5; border-radius: var(--radius); background: var(--paper-3); border: 1px solid var(--line); position: relative; overflow: hidden; display: grid; place-items: center; }
+.dan-photo .ph { color: var(--ink-4); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; text-align: center; }
+.dan-photo::before { content:""; position:absolute; inset:0; background-image: radial-gradient(var(--line-2) 1.2px, transparent 1.3px); background-size: 20px 20px; opacity: .5; }
+.dan-name { font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -0.02em; margin-top: 22px; }
+.dan-role { color: var(--ink-3); margin-top: 4px; }
+.dan-links { display: flex; gap: 10px; margin-top: 18px; }
+.dan-links a { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 100px; border: 1.5px solid var(--line-2); font-weight: 600; font-size: 14.5px; transition: .2s; }
+.dan-links a:hover { border-color: var(--ink); }
+
+.belief { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(36px, 5vw, 64px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px,4vw,56px); align-items: center; }
+.belief .q { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(24px, 3.2vw, 34px); line-height: 1.32; letter-spacing: -0.01em; }
+.belief p { color: var(--ink-2); font-size: 18px; line-height: 1.6; }
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .dan-card { position: static; }
+  .dan-photo { max-width: 360px; }
+  .belief { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav wrap">
+    <a class="brand" href="index.html" aria-label="EQ Partners home"><span class="mark" aria-hidden="true"></span> EQ Partners</a>
+    <div class="nav-links">
+      <a class="navitem" href="index.html">Home</a>
+      <a class="navitem" href="work.html">Work</a>
+      <a class="navitem" href="method.html">Method</a>
+      <a class="navitem active" href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="contact.html">Get in touch <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main data-screen-label="About">
+
+<section class="page-hero wrap">
+  <span class="eyebrow reveal">About</span>
+  <h1 class="reveal" data-delay="1">Built by a builder.</h1>
+</section>
+
+<section class="wrap" style="padding-bottom: clamp(56px,7vw,96px)">
+  <div class="about-grid">
+    <div class="about-copy reveal">
+      <p>EQ Partners was founded by <span class="serif-em">Dan Harris</span> — a strategy consultant and product builder who has spent his career at the intersection of commercial strategy and product development.</p>
+      <p>The studio model reflects a simple belief: the best products are built by people who care about both the problem and the outcome. Not agencies optimising for billable hours. Not dev shops executing a spec. Partners who are invested in whether it works.</p>
+      <p>EQ collaborates with a network of specialists — designers, engineers, researchers, growth operators — assembled around each venture. The result is a studio that can move like a startup and think like a consultancy.</p>
+    </div>
+
+    <aside class="dan-card reveal" data-delay="1">
+      <div class="dan-photo"><span class="ph">Photo of Dan<br />— to be supplied</span></div>
+      <div class="dan-name">Dan Harris</div>
+      <div class="dan-role">Founder, EQ Partners</div>
+      <div class="dan-links">
+        <a href="#" aria-label="Dan Harris on LinkedIn">LinkedIn ↗</a>
+        <a href="mailto:dan.harris@eqpstudio.com">Email →</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section wrap" style="padding-top:0">
+  <div class="belief reveal">
+    <p class="q">"The best products are built by people who care about both the problem and the outcome."</p>
+    <p>That's why EQ takes a stake, not a brief. We embed with the people who own the problem and build alongside them — bringing strategic and commercial thinking next to the engineering, from the first insight to the first customer and beyond.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-cta">
+        <h2>Ready to build something?</h2>
+        <p>Tell us what you're working on. We'll tell you if we can help.</p>
+        <a class="btn btn-primary btn-lg" href="contact.html">Start a conversation <span class="arrow">→</span></a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="method.html">Method</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Selected work</h4>
+        <ul>
+          <li><a href="airtrack.html">AirTrack</a></li>
+          <li><a href="work.html">Borrow It</a></li>
+          <li><a href="work.html">Interplay Survey</a></li>
+          <li><a href="work.html">Product OS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span> EQ Partners</a>
+      <span>© 2026 EQ Partners. A product development studio.</span>
+      <a href="mailto:dan.harris@eqpstudio.com">dan.harris@eqpstudio.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

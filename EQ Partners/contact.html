@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — EQ Partners</title>
+<meta name="description" content="If you're building something and want a partner who will think it through with you — not just take the brief — get in touch with EQ Partners." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 88px); align-items: start; padding-top: clamp(48px, 7vw, 88px); }
+.contact-intro h1 { font-size: clamp(44px, 6.5vw, 84px); font-weight: 800; letter-spacing: -0.045em; line-height: .96; margin-top: 22px; }
+.contact-intro p { font-size: clamp(18px, 2.1vw, 21px); color: var(--ink-2); line-height: 1.55; margin-top: 26px; max-width: 42ch; }
+.contact-intro .meta { margin-top: 40px; display: flex; flex-direction: column; gap: 18px; }
+.contact-intro .meta .row { display: flex; flex-direction: column; gap: 4px; }
+.contact-intro .meta .k { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--ink-4); }
+.contact-intro .meta .v { font-size: 17px; font-weight: 500; }
+.contact-intro .meta .v a { border-bottom: 1.5px solid var(--line-2); padding-bottom: 1px; transition: border-color .2s; }
+.contact-intro .meta .v a:hover { border-color: var(--ink); }
+
+.form-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(28px, 4vw, 44px); }
+.field { margin-bottom: 22px; }
+.field:last-of-type { margin-bottom: 0; }
+.field label { display: block; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 9px; }
+.field label .req { color: var(--accent); }
+.field input, .field textarea, .field select {
+  width: 100%; font-family: var(--body); font-size: 16px; color: var(--ink);
+  background: var(--paper); border: 1.5px solid var(--line); border-radius: 10px;
+  padding: 14px 15px; transition: border-color .2s, background .2s; -webkit-appearance: none; appearance: none;
+}
+.field textarea { resize: vertical; min-height: 120px; line-height: 1.5; }
+.field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--accent); background: var(--white); }
+.field .selwrap { position: relative; }
+.field .selwrap::after { content:"▾"; position:absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--ink-3); pointer-events: none; font-size: 13px; }
+.field.invalid input, .field.invalid textarea, .field.invalid select { border-color: #c2553b; }
+.field .err { color: #c2553b; font-size: 13px; margin-top: 7px; display: none; }
+.field.invalid .err { display: block; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-submit { margin-top: 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.form-note { font-size: 13.5px; color: var(--ink-3); }
+
+.form-success { display: none; text-align: left; padding: clamp(20px,3vw,32px) 0; }
+.form-card.sent .form-inner { display: none; }
+.form-card.sent .form-success { display: block; }
+.form-success .ck { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 26px; margin-bottom: 22px; }
+.form-success h3 { font-size: 28px; letter-spacing: -0.02em; }
+.form-success p { color: var(--ink-2); margin-top: 12px; font-size: 17px; line-height: 1.55; max-width: 42ch; }
+
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav wrap">
+    <a class="brand" href="index.html" aria-label="EQ Partners home"><span class="mark" aria-hidden="true"></span> EQ Partners</a>
+    <div class="nav-links">
+      <a class="navitem" href="index.html">Home</a>
+      <a class="navitem" href="work.html">Work</a>
+      <a class="navitem" href="method.html">Method</a>
+      <a class="navitem" href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="contact.html">Get in touch <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main data-screen-label="Contact">
+
+<section class="wrap" style="padding-bottom: clamp(64px,9vw,120px)">
+  <div class="contact-grid">
+
+    <div class="contact-intro">
+      <span class="eyebrow reveal">Contact</span>
+      <h1 class="reveal" data-delay="1">Let's talk.</h1>
+      <p class="reveal" data-delay="2">If you're building something and want a partner who will think it through with you — not just take the brief — get in touch.</p>
+      <p class="reveal" data-delay="2">Tell us what you're working on, where you are in the process, and what kind of support you're looking for. We'll get back to you within 48 hours.</p>
+      <div class="meta reveal" data-delay="3">
+        <div class="row"><span class="k">Email</span><span class="v"><a href="mailto:dan.harris@eqpstudio.com">dan.harris@eqpstudio.com</a></span></div>
+        <div class="row"><span class="k">Response time</span><span class="v">Within 48 hours</span></div>
+      </div>
+    </div>
+
+    <div class="form-card reveal" data-delay="1" id="formCard">
+      <form class="form-inner" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+            <span class="err">Please enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+            <span class="err">Please enter a valid email.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="company">Company / project name</label>
+          <input type="text" id="company" name="company" />
+        </div>
+        <div class="field">
+          <label for="building">What are you building? <span class="req">*</span></label>
+          <textarea id="building" name="building" required placeholder="A sentence or two on the product or problem."></textarea>
+          <span class="err">Tell us a little about what you're building.</span>
+        </div>
+        <div class="field">
+          <label for="stage">Where are you in the process?</label>
+          <div class="selwrap">
+            <select id="stage" name="stage">
+              <option value="">Select a stage…</option>
+              <option>Idea stage</option>
+              <option>Validated concept</option>
+              <option>In development</option>
+              <option>Post-launch</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="heard">How did you hear about us?</label>
+          <input type="text" id="heard" name="heard" />
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary btn-lg">Send it <span class="arrow">→</span></button>
+          <span class="form-note">We'll reply within 48 hours.</span>
+        </div>
+      </form>
+
+      <div class="form-success">
+        <div class="ck">✓</div>
+        <h3>Thanks — it's with us.</h3>
+        <p>We'll read what you sent and get back to you within 48 hours. If it's urgent, email <a href="mailto:dan.harris@eqpstudio.com" style="border-bottom:1.5px solid var(--line-2)">dan.harris@eqpstudio.com</a> directly.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-cta">
+        <h2>Prefer email?</h2>
+        <p>Reach Dan directly and we'll take it from there.</p>
+        <a class="btn btn-primary btn-lg" href="mailto:dan.harris@eqpstudio.com">Email the studio <span class="arrow">→</span></a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="method.html">Method</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Selected work</h4>
+        <ul>
+          <li><a href="airtrack.html">AirTrack</a></li>
+          <li><a href="work.html">Borrow It</a></li>
+          <li><a href="work.html">Interplay Survey</a></li>
+          <li><a href="work.html">Product OS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span> EQ Partners</a>
+      <span>© 2026 EQ Partners. A product development studio.</span>
+      <a href="mailto:dan.harris@eqpstudio.com">dan.harris@eqpstudio.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('contactForm');
+  var card = document.getElementById('formCard');
+  if (!form) return;
+  function setInvalid(field, bad) { field.closest('.field').classList.toggle('invalid', bad); }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ok = true;
+    var name = form.name, email = form.email, building = form.building;
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+    setInvalid(name, !name.value.trim()); if (!name.value.trim()) ok = false;
+    setInvalid(email, !emailOk); if (!emailOk) ok = false;
+    setInvalid(building, !building.value.trim()); if (!building.value.trim()) ok = false;
+    if (!ok) { form.querySelector('.invalid input, .invalid textarea').focus(); return; }
+    card.classList.add('sent');
+    card.scrollTo ? window.scrollTo({ top: card.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }) : null;
+  });
+  form.querySelectorAll('input, textarea').forEach(function (el) {
+    el.addEventListener('input', function () { el.closest('.field').classList.remove('invalid'); });
+  });
+})();
+</script>
+</body>
+</html>

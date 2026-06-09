@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EQ Partners — Product Development Studio</title>
+<meta name="description" content="EQ Partners is a product development studio. We collaborate with founders and organisations to build, launch, and grow product ventures — from the first insight to the first customer." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* ---------- HERO ---------- */
+.hero { padding-top: clamp(40px, 7vw, 86px); padding-bottom: clamp(56px, 8vw, 104px); }
+.hero-grid { display: grid; grid-template-columns: 1.32fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+.hero h1 { font-size: clamp(46px, 8.2vw, 104px); font-weight: 800; letter-spacing: -0.045em; line-height: 0.95; margin: 26px 0 0; }
+.hero h1 .em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.02em; }
+.hero .sub { font-size: clamp(18px, 2.1vw, 21px); color: var(--ink-2); max-width: 46ch; margin-top: 30px; line-height: 1.5; }
+.hero .cta-row { display: flex; gap: 14px; margin-top: 38px; flex-wrap: wrap; }
+.hero .trust { margin-top: 42px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 14.5px; color: var(--ink-3); }
+.hero .trust .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.hero .trust b { color: var(--ink-2); font-weight: 600; }
+
+/* abstract Product OS panel */
+.os-panel {
+  background: var(--ink); color: var(--paper); border-radius: 18px;
+  padding: 24px; box-shadow: 0 40px 80px -44px rgba(20,20,20,.55);
+  position: relative; overflow: hidden;
+}
+.os-panel::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 100% 0%, rgba(26,122,107,.30), transparent 55%); pointer-events: none; }
+.os-head { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+.os-head .t { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600; letter-spacing: .02em; }
+.os-head .t .ic { width: 18px; height: 18px; border-radius: 5px; background: var(--accent); position: relative; }
+.os-head .t .ic::before { content:""; position:absolute; inset:5px 4px; border-left:1.5px solid #fff; border-right:1.5px solid #fff; opacity:.85; }
+.os-live { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #9fc7bd; font-weight: 600; }
+.os-live .pulse { width: 7px; height: 7px; border-radius: 50%; background: #46c2a8; box-shadow: 0 0 0 0 rgba(70,194,168,.6); animation: pulse 2.4s infinite; }
+@keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(70,194,168,.55)} 70%{box-shadow:0 0 0 8px rgba(70,194,168,0)} 100%{box-shadow:0 0 0 0 rgba(70,194,168,0)} }
+.os-rows { margin-top: 22px; display: flex; flex-direction: column; gap: 11px; position: relative; z-index: 1; }
+.os-row { display: flex; align-items: center; gap: 12px; padding: 13px 15px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 11px; }
+.os-row .src { font-size: 11px; font-weight: 700; letter-spacing: .05em; color: #8c8c84; width: 64px; flex: none; text-transform: uppercase; }
+.os-row .txt { font-size: 13.5px; color: #d8d7cf; line-height: 1.4; }
+.os-row .txt em { font-style: normal; color: #fff; }
+.os-foot { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.10); display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+.os-spark { flex: 1; height: 30px; }
+.os-foot .label { font-size: 11.5px; color: #8c8c84; font-weight: 600; letter-spacing: .04em; }
+
+/* ---------- METHOD PREVIEW ---------- */
+.pipeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; margin-top: 16px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white); }
+.pipe-step { padding: 28px 22px; border-right: 1px solid var(--line); position: relative; transition: background .3s; }
+.pipe-step:last-child { border-right: 0; }
+.pipe-step:hover { background: var(--paper-2); }
+.pipe-step .n { font-family: var(--display); font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: .04em; }
+.pipe-step h4 { font-size: 18px; margin-top: 14px; letter-spacing: -0.02em; }
+.pipe-step .arrow-c { position: absolute; right: -9px; top: 50%; transform: translateY(-50%); z-index: 2; width: 18px; height: 18px; border-radius: 50%; background: var(--paper); display: grid; place-items: center; color: var(--ink-4); }
+.pipe-step:last-child .arrow-c { display: none; }
+
+/* ---------- DIFFERENTIATORS ---------- */
+.diffs { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px); }
+.diff .dn { font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--accent); }
+.diff h3 { font-size: clamp(22px, 2.4vw, 27px); margin-top: 18px; letter-spacing: -0.025em; line-height: 1.1; }
+.diff p { color: var(--ink-3); margin-top: 14px; font-size: 16.5px; line-height: 1.55; }
+.diff .hr { height: 2px; width: 38px; background: var(--ink); margin-top: 24px; }
+
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .os-panel { max-width: 460px; }
+  .pipeline { grid-template-columns: repeat(3, 1fr); }
+  .pipe-step:nth-child(3) .arrow-c { display: none; }
+  .pipe-step:nth-child(3n) { border-right: 0; }
+  .diffs { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 560px) {
+  .pipeline { grid-template-columns: repeat(2, 1fr); }
+  .pipe-step:nth-child(2n) { border-right: 0; }
+  .pipe-step .arrow-c { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <nav class="nav wrap">
+    <a class="brand" href="index.html" aria-label="EQ Partners home">
+      <span class="mark" aria-hidden="true"></span> EQ Partners
+    </a>
+    <div class="nav-links">
+      <a class="navitem active" href="index.html">Home</a>
+      <a class="navitem" href="work.html">Work</a>
+      <a class="navitem" href="method.html">Method</a>
+      <a class="navitem" href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="contact.html">Get in touch <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero wrap" data-screen-label="Home — Hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Product Development Studio</span>
+      <h1 class="reveal" data-delay="1">We build products that <span class="em">work.</span></h1>
+      <p class="sub reveal" data-delay="2">Strategy, design, engineering, and growth under one roof. We collaborate with founders and organisations to build, launch, and grow product ventures — from the first insight to the first customer.</p>
+      <div class="cta-row reveal" data-delay="3">
+        <a class="btn btn-primary btn-lg" href="work.html">See our work <span class="arrow">→</span></a>
+        <a class="btn btn-ghost btn-lg" href="contact.html">Get in touch</a>
+      </div>
+      <div class="trust reveal" data-delay="4">
+        <span class="dot"></span>
+        <span>Selected work: <b>Borrow It · AirTrack · Interplay · Product OS</b></span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" data-delay="2">
+      <div class="os-panel" aria-hidden="true">
+        <div class="os-head">
+          <div class="t"><span class="ic"></span> Product OS</div>
+          <div class="os-live"><span class="pulse"></span> Live</div>
+        </div>
+        <div class="os-rows">
+          <div class="os-row"><span class="src">Granola</span><span class="txt">Meeting decision captured — <em>route model V2 prioritised</em></span></div>
+          <div class="os-row"><span class="src">Linear</span><span class="txt">Roadmap synced · <em>3 issues flagged</em> for review</span></div>
+          <div class="os-row"><span class="src">Research</span><span class="txt">"Aware Mover" persona insight surfaced to GTM</span></div>
+        </div>
+        <div class="os-foot">
+          <svg class="os-spark" viewBox="0 0 240 30" preserveAspectRatio="none">
+            <polyline fill="none" stroke="#46c2a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              points="0,22 26,18 52,24 78,12 104,16 130,8 156,14 182,6 208,11 240,3" />
+          </svg>
+          <span class="label">Weekly intelligence · automated</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider wrap" style="max-width:var(--maxw)" />
+
+<!-- ============ METHOD PREVIEW ============ -->
+<section class="section wrap" data-screen-label="Home — Method">
+  <div class="sec-head">
+    <h2 class="reveal">One studio across the whole product stack.</h2>
+    <p class="lead reveal" data-delay="1">The problems in product development almost always live at the handoffs — between strategy and design, design and engineering, launch and growth. We remove them.</p>
+  </div>
+  <div class="pipeline reveal" data-delay="1">
+    <div class="pipe-step"><div class="n">01</div><h4>Strategy</h4><div class="arrow-c">→</div></div>
+    <div class="pipe-step"><div class="n">02</div><h4>CX Design</h4><div class="arrow-c">→</div></div>
+    <div class="pipe-step"><div class="n">03</div><h4>Marketing</h4><div class="arrow-c">→</div></div>
+    <div class="pipe-step"><div class="n">04</div><h4>Sales</h4><div class="arrow-c">→</div></div>
+    <div class="pipe-step"><div class="n">05</div><h4>Engineering</h4><div class="arrow-c">→</div></div>
+    <div class="pipe-step"><div class="n">06</div><h4>Customer Success</h4></div>
+  </div>
+  <div style="margin-top:32px" class="reveal"><a class="tlink" href="method.html">How we work <span class="arrow">→</span></a></div>
+</section>
+
+<!-- ============ SELECTED WORK ============ -->
+<section class="section wrap" style="padding-top:0" data-screen-label="Home — Work">
+  <div class="sec-head">
+    <h2 class="reveal">Selected work.</h2>
+    <p class="lead reveal" data-delay="1">Real products, shipped across consumer apps, B2B platforms, and internal tooling.</p>
+  </div>
+  <div class="work-grid">
+
+    <a class="work-card reveal" href="airtrack.html" style="--prod:var(--airtrack)" data-delay="1">
+      <div class="work-thumb">
+        <span class="ph-label">Product screen — route &amp; exposure view</span>
+        <div class="thumb-art art-grid"></div>
+        <span class="wm">AirTrack</span>
+      </div>
+      <div class="work-body">
+        <div class="work-tags"><span class="tag">Consumer app</span><span class="tag">Health</span></div>
+        <h3>Personal air quality for urban movers</h3>
+        <p class="desc">Forward-looking, hyperlocal air quality guidance — the cleanest route, the best time to go, and what you actually breathed.</p>
+        <div class="work-foot">
+          <span class="work-metric">~90%<span>of acquisition via Strava</span></span>
+          <span class="go">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="work-card reveal" href="work.html" style="--prod:var(--borrow)" data-delay="2">
+      <div class="work-thumb">
+        <span class="ph-label">Product screen — discovery &amp; rental comparison</span>
+        <div class="thumb-art art-dots"></div>
+        <span class="wm">Borrow It</span>
+      </div>
+      <div class="work-body">
+        <div class="work-tags"><span class="tag">Marketplace</span><span class="tag">Sustainability</span></div>
+        <h3>Access without ownership</h3>
+        <p class="desc">A peer-to-peer borrowing platform with a rental comparison layer that aggregates listings into one discovery experience.</p>
+        <div class="work-foot">
+          <span class="work-metric">Live<span>at brw.it</span></span>
+          <span class="go">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="work-card reveal" href="work.html" style="--prod:var(--interplay)" data-delay="1">
+      <div class="work-thumb">
+        <span class="ph-label">Product screen — scoring &amp; benchmark report</span>
+        <div class="thumb-art art-lines"></div>
+        <span class="wm">Interplay</span>
+      </div>
+      <div class="work-body">
+        <div class="work-tags"><span class="tag">B2B platform</span><span class="tag">Sustainability</span></div>
+        <h3>Sustainability as commercial value</h3>
+        <p class="desc">A five-pillar brand and sustainability assessment with a financial opportunity model and AI Digital Twin personas.</p>
+        <div class="work-foot">
+          <span class="work-metric">5 pillars<span>scored &amp; benchmarked</span></span>
+          <span class="go">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="work-card reveal" href="work.html" style="--prod:var(--os)" data-delay="2">
+      <div class="work-thumb">
+        <span class="ph-label">Product screen — agentic intelligence layer</span>
+        <div class="thumb-art art-rings"></div>
+        <span class="wm">Product OS</span>
+      </div>
+      <div class="work-body">
+        <div class="work-tags"><span class="tag">Infrastructure</span><span class="tag">AI / Agentic</span></div>
+        <h3>The connective layer for product teams</h3>
+        <p class="desc">Proprietary AI infrastructure that turns meetings, issues, and research into a live, queryable product knowledge base.</p>
+        <div class="work-foot">
+          <span class="work-metric">Built in-house<span>deployed on AirTrack</span></span>
+          <span class="go">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+  <div style="margin-top:40px" class="reveal"><a class="tlink" href="work.html">View all work <span class="arrow">→</span></a></div>
+</section>
+
+<hr class="divider wrap" style="max-width:var(--maxw)" />
+
+<!-- ============ DIFFERENTIATORS ============ -->
+<section class="section wrap" data-screen-label="Home — Differentiators">
+  <div class="sec-head">
+    <span class="eyebrow reveal">What makes EQ different</span>
+  </div>
+  <div class="diffs">
+    <div class="diff reveal" data-delay="1">
+      <div class="dn">01</div>
+      <h3>Full-stack, not full-service</h3>
+      <p>We don't hand off between teams. Strategy, design, engineering, and growth are built together from day one.</p>
+      <div class="hr"></div>
+    </div>
+    <div class="diff reveal" data-delay="2">
+      <div class="dn">02</div>
+      <h3>Outcomes, not outputs</h3>
+      <p>We measure success by what the product does in the world — not by what we deliver in a folder.</p>
+      <div class="hr"></div>
+    </div>
+    <div class="diff reveal" data-delay="3">
+      <div class="dn">03</div>
+      <h3>AI-native by default</h3>
+      <p>We build AI workflows into how we work, so products are faster to ship, cheaper to run, and smarter over time.</p>
+      <div class="hr"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-cta">
+        <h2>Ready to build something?</h2>
+        <p>Tell us what you're working on. We'll tell you if we can help.</p>
+        <a class="btn btn-primary btn-lg" href="contact.html">Start a conversation <span class="arrow">→</span></a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="method.html">Method</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Selected work</h4>
+        <ul>
+          <li><a href="airtrack.html">AirTrack</a></li>
+          <li><a href="work.html">Borrow It</a></li>
+          <li><a href="work.html">Interplay Survey</a></li>
+          <li><a href="work.html">Product OS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span> EQ Partners</a>
+      <span>© 2026 EQ Partners. A product development studio.</span>
+      <a href="mailto:dan.harris@eqpstudio.com">dan.harris@eqpstudio.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
