@@ -19,9 +19,9 @@
 .about-copy p:last-child { margin-bottom: 0; }
 
 .dan-card { position: sticky; top: 100px; }
-.dan-photo { aspect-ratio: 4/5; border-radius: var(--radius); background: var(--paper-3); border: 1px solid var(--line); position: relative; overflow: hidden; display: grid; place-items: center; }
-.dan-photo .ph { color: var(--ink-4); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; text-align: center; }
-.dan-photo::before { content:""; position:absolute; inset:0; background-image: radial-gradient(var(--line-2) 1.2px, transparent 1.3px); background-size: 20px 20px; opacity: .5; }
+.dan-photo { aspect-ratio: 4/5; border-radius: var(--radius); border: 1px solid var(--line); position: relative; overflow: hidden; }
+.dan-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; transition: transform .6s ease; }
+.dan-photo:hover img { transform: scale(1.03); }
 .dan-name { font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -0.02em; margin-top: 22px; }
 .dan-role { color: var(--ink-3); margin-top: 4px; }
 .dan-links { display: flex; gap: 10px; margin-top: 18px; }
@@ -73,7 +73,7 @@
     </div>
 
     <aside class="dan-card reveal" data-delay="1">
-      <div class="dan-photo"><span class="ph">Photo of Dan<br />— to be supplied</span></div>
+      <div class="dan-photo"><img src="DanHarrisCannes.jpg" alt="Dan Harris, Founder of EQ Partners" /></div>
       <div class="dan-name">Dan Harris</div>
       <div class="dan-role">Founder, EQ Partners</div>
       <div class="dan-links">
